@@ -160,7 +160,7 @@ nav ul li a:hover::after{
     font-size: 50px;
     margin-bottom: 30px;
 }
-,.services-list div h2{
+.services-list div h2{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
@@ -199,7 +199,7 @@ nav ul li a:hover::after{
 }
 .layer{
     width: 100%;
-    height: 0%;
+    height: 100%;
     background: linear-gradient(rgba(0,0,0,0.6), #30D5C8);
     border-radius: 10px;
     position: absolute;
@@ -227,8 +227,8 @@ nav ul li a:hover::after{
     line-height: 60px;
     background: #fff;
     width: 60px;
-    height: 60pc;
-    border-radius: 50px;
+    height: 60px;
+    border-radius: 50%;
     text-align: center;
 }
 .work:hover img{
@@ -282,7 +282,7 @@ nav ul li a:hover::after{
     color: #30D5C8;
     transform: translateY(-5px);
 }
-.btn.btb2{
+.btn.btn2{
     display: inline-block;
     background: #30D5C8;
 }
