@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M. Bartena | Contact Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/215638c07f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="contact">
+      <div class="container">
+        <nav>
+          <img src="/image/logo4.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/my-services/index.html">Services</a></li>
+            <li><a href="/photography/index.html">Portfolio</a></li>
+            <li><a href="/contact/index.html">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+      </div>
+      <!------contact-->
+      <div class="container">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 class="sub-title">Transforming Ideas into Timeless Treasures</h1>
+        <br />
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title"><span>Contact</span> Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>mosesbartena@gmail.com</p>
+            <p><i class="fa-solid fa-square-phone"></i>0712 57 57 97</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/djgee400"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="https://www.twitter.com/djg400"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/djg400"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.snapchat.com/djgee400"
+                ><i class="fa-brands fa-snapchat"></i
+              ></a>
+            </div>
+            <!-- <a href="index.html" download class="btn btn2">Download CV</a> -->
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                type="text"
+                name="Message"
+                rows="6"
+                placeholder="Your Message..."
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <p>Copyright © 2023 Arap Tala. Made with 4our Pixels</p>
+      </div>
+    </footer>
+
+    <script src="./image/js.js"></script>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwLq3Nzvc_DU_3lJQD3jU3RTljc6XdwQJmOlNrcgZmDSIhyjITbEOH9Y4T4_UTej5YG6Q/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
