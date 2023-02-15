@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M. Bartena | Photography Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/215638c07f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="nakuru">
+      <div class="container">
+        <nav>
+          <a href="/index.html"><img src="/image/logo4.png" class="logo" /></a>
+          <ul id="sidemenu">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/my-services/index.html">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <h1>P H O T O G R A P H Y</h1>
+          <p>Paint Job: Nakuru</p>
+          <a href="#portfolio"><button class="btn btn2">See Before & After</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!------portfolio-->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">Quick Look...</h1>
+        <div class="work-list">
+          <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-01.png" />
+            </div>
+            <!-- end of image 1 -->
+            <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-02.png">
+            </div>
+          <!-- end of image 1 -->
+        </div>
+        <div class="work-list">
+          <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-03.png" />
+            </div>
+            <!-- end of image 1 -->
+            <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-04.png">
+            </div>
+          <!-- end of image 1 -->
+        </div>
+        <div class="work-list">
+          <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-05.png" />
+            </div>
+            <!-- end of image 1 -->
+            <!-- image 1 -->
+            <div class="work">
+              <img src="/photography/car-paint-job/car-06.png">
+            </div>
+          <!-- end of image 1 -->
+        </div>
+    </div>
+    <!------aboout------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="/photography/car-paint-job/car-08.png" />
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">Photography</h1>
+                    <br>
+                    <br>
+                    <p>Working on this car paint job project by Midas Autocar was one of my favorite photography gigs 
+                      to date. <br> <br> I had the pleasure of photographing the Nissan Dualis with a stunning new 
+                      paint job, and my job was to capture its beauty in detail. <br> <br>I spent hours on 
+                      location setting up each shot, making sure to showcase every curve and angle 
+                      of the car. <br> <br>The end result was a series of images that truly captured the 
+                      essence of the project and highlighted the great work that had been done. 
+                    </p>
+                    <a href="https://www.instagram.com/ipiche___" class="btn btn2">Instagram Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/photography/airbnb/index.html" class="btn">Airbnb Project</a>
+    <a href="/photography/mombasa/index.html" class="btn">Mombasa Trip</a>
+<footer>
+    <div class="copyright">
+        <p>Copyright © 2023 Arap Tala. Made with 4our Pixels</p>
+    </div>
+</footer>
+
+<script src="./image/js.js"></script>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwLq3Nzvc_DU_3lJQD3jU3RTljc6XdwQJmOlNrcgZmDSIhyjITbEOH9Y4T4_UTej5YG6Q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>   
+</body>
+</html>
